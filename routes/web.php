@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GreetingsController;
+use App\Http\Controllers\PortfolioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -9,13 +9,12 @@ use App\Http\Controllers\GreetingsController;
 |--------------------------------------------------------------------------
 */
 
-// Rute default Laravel (bisa dihapus atau dibiarkan)
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Tugas 1 & 4: Rute Dasar dengan Controller
-Route::get('/welcome', [GreetingsController::class, 'welcome']);
-
-// Tugas 2 & 4: Rute dengan Parameter menggunakan Controller
-Route::get('/greet/{name}/{npm}', [GreetingsController::class, 'greet']);
+// Route untuk Portfolio
+Route::get('/home', [PortfolioController::class, 'home']);
+Route::get('/profil', [PortfolioController::class, 'profil']);
+Route::get('/pendidikan', [PortfolioController::class, 'pendidikan']);
+Route::get('/keahlian', [PortfolioController::class, 'keahlian']);
